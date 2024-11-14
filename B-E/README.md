@@ -66,5 +66,4 @@ The backend is deployed to AWS using GitLab CI/CD. Each push to the main branch 
     - Configure .gitlab-ci.yml to define deployment stages for building and deploying your serverless backend to AWS.
 2. Serverless Configuration:
     - The serverless.yml file includes all necessary configurations for Lambda functions, API Gateway, and environment variables.
-3. Production Link:
-    - The backend integrates with the frontend hosted at [Video Chat App](https://main.d2xkbos8gv8b9m.amplifyapp.com/) 
+
