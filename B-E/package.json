@@ -1,0 +1,39 @@
+{
+  "name": "video-chat-backend",
+  "version": "1.0.0",
+  "description": "Serverless backend for a video chat application",
+  "main": "src/handlers/connect.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest",
+    "build": "npm run lint && npm test && echo 'Build success!'",
+    "deploy": "serverless deploy -v",
+    "deploy:offline": "serverless offline",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "jest --bail --findRelatedTests",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^9.14.0",
+    "globals": "^15.11.0",
+    "husky": "^9.1.6",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.10",
+    "serverless": "^3.39.0",
+    "serverless-dotenv-plugin": "^6.0.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1691.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "jest-mock": "^29.7.0",
+    "mysql2": "^3.11.3"
+  },
+  "author": "",
+  "license": "ISC"
+}
