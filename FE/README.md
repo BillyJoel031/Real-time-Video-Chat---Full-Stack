@@ -12,10 +12,6 @@ This is the frontend for the app, providing a responsive user interface for real
 
 ## Project Setup
 1. Clone the Repository
-
-```bash
-git clone https://gitlab.com/homeproject2674842/hack-house.git
-```
 2. Install Dependencies
 Open terminal and type:
 
@@ -76,5 +72,3 @@ To test the app's video call functionality
 ## Deployment
 This project uses AWS Amplify to automate the deployment process. Once changes are pushed to the main branch on Gitlab, Amplify will build and deploy the frontend automatically.
 
-## Production Link :
-[Video Chat App](https://main.d2xkbos8gv8b9m.amplifyapp.com/)
