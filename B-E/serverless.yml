@@ -1,0 +1,51 @@
+service: video-chat-backend
+
+useDotenv: true # Enables dotenv loading directly
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  environment:
+    DB_HOST: ${env:DB_HOST}
+    DB_USER: ${env:DB_USER}
+    DB_PASSWORD: ${env:DB_PASSWORD}
+    DB_NAME: ${env:DB_NAME}
+
+functions:
+  connect:
+    handler: src/handlers/connect.handler
+    events:
+      - websocket:
+          route: $connect
+
+  disconnect:
+    handler: src/handlers/disconnect.handler
+    events:
+      - websocket:
+          route: $disconnect
+
+  sendMessage:
+    handler: src/handlers/sendMessage.handler
+    events:
+      - websocket:
+          route: $default
+
+  register:
+    handler: src/handlers/register.handler
+    events:
+      - http:
+          path: register
+          method: post
+          cors: true
+
+  login:
+    handler: src/handlers/login.handler
+    events:
+      - http:
+          path: login
+          method: post
+          cors: true
+
+plugins:
+  - serverless-dotenv-plugin
